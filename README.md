@@ -24,7 +24,7 @@ LifeOS Agent is an intelligent Telegram Bot assistant built to seamlessly manage
 - Python 3.10+
 - An OpenAI API Key.
 - A Telegram Bot Token (from BotFather).
-- **Notion Setup**: Duplicate this [LifeOS Notion Template](https://antique-cheque-06a.notion.site/LifeOS-30b05fdbc7d08026913cdaa00ce68e79) to your workspace.
+- **Notion Setup**: Duplicate this [LifeOS Notion Template](https://antique-cheque-06a.notion.site/LifeOS-Template-30f05fdbc7d081758a5eec29f23439c2?pvs=73) to your workspace.
 - Notion Integration Token & Notion Database IDs (extracted from the duplicated template).
 
 ### 2. Clone and Install
