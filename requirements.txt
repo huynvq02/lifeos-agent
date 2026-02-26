@@ -1,0 +1,10 @@
+langgraph==1.0.9
+langchain-anthropic==1.3.4
+mcp==1.26.0
+python-dotenv==1.2.1
+pydantic==2.12.5
+python-telegram-bot==22.6
+nest-asyncio==1.6.0
+langchain-mcp-adapters==0.2.1
+langgraph-checkpoint-sqlite==3.0.3
+langchain-openai==1.1.10
