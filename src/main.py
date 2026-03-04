@@ -85,7 +85,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 # Show status when agent decides to call a tool
                 if hasattr(msg, "tool_call_chunks") and msg.tool_call_chunks:
                     if not tool_call_announced:
-                        await reply_msg.edit_text("🛠 Đang truy xuất Notion...")
+                        try:
+                            await reply_msg.edit_text("🛠 Đang truy xuất Notion...")
+                        except Exception as e:
+                            logger.warning(f"Failed to edit message for tool call: {e}")
                         tool_call_announced = True
                         last_edit_time = time.time()
                         
@@ -111,7 +114,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await reply_msg.edit_text(formatted_text, parse_mode="Markdown")
             except Exception as e:
                 logger.warning(f"Markdown parse error: {e}")
-                await reply_msg.edit_text(current_text)
+                try:
+                    await reply_msg.edit_text(current_text)
+                except Exception as ex:
+                    logger.warning(f"Failed to edit final message: {ex}")
                 
     except GraphRecursionError:
         logger.error("Circuit breaker triggered: recursion limit reached")
